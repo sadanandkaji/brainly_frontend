@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-import { Iconprops,iconsizevariant } from "../../icons";
+import { Iconprops,iconsizevariant } from "../icons";
 
 type variants= "primary" | "secondary"
 export interface buttonprops{
@@ -24,7 +24,7 @@ const sizestyles={
     "lg":"py-4 px-6"
 }
 
-const defaultstyles="rounded-md flex p-4"
+const defaultstyles="rounded-md flex item-center  p-4"
 
 
 export const Button =(props:buttonprops)=>{
@@ -33,5 +33,3 @@ return <button className={`${variantstyles[props.variant]} ${sizestyles[props.si
     {props.text} 
     {props.endicon ? <div className="pr-2 pt-1">{props.endicon} </div> : null}</button>
 }
-
-
