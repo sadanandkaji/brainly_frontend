@@ -10,7 +10,7 @@ interface cardcompo{
 export function Card({title,type,link}:cardcompo){
     return <div>
 
-     <div className="border-grey-200 border p-4 max-w-72 rounded-md min-h-min">
+     <div className="border-slate-500  bg-gray-300 border-2 p-4 max-w-72 rounded-md min-h-min">
 
           <div className="flex jutify-center">
 

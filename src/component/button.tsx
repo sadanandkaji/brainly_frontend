@@ -9,7 +9,7 @@ export interface buttonprops{
      endicon?:any;
      size:"md"|"sm"|"lg";
      text:string;
-     Onclick:()=>void;
+     OnClick?:()=>void;
 
 }
 
@@ -24,11 +24,11 @@ const sizestyles={
     "lg":"py-4 px-6"
 }
 
-const defaultstyles="rounded-md flex item-center  p-4"
+const defaultstyles="rounded-md flex item-center p-4"
 
 
 export const Button =(props:buttonprops)=>{
-return <button className={`${variantstyles[props.variant]} ${sizestyles[props.size]} ${defaultstyles}`}>
+return <button onClick={props.OnClick}  className={`${variantstyles[props.variant]} ${sizestyles[props.size]} ${defaultstyles}`}>
     {props.starticon ? <div className="pr-2 pt-1">{props.starticon}</div> : null} 
     {props.text} 
     {props.endicon ? <div className="pr-2 pt-1">{props.endicon} </div> : null}</button>
