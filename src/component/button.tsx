@@ -10,6 +10,8 @@ export interface buttonprops{
      size:"md"|"sm"|"lg";
      text:string;
      OnClick?:()=>void;
+     fullwidth?:boolean;
+     loading?:boolean;
 
 }
 
@@ -24,11 +26,12 @@ const sizestyles={
     "lg":"py-4 px-6"
 }
 
-const defaultstyles="rounded-md flex item-center p-4"
+const defaultstyles="rounded-md flex item-center p-4 justify-center"
 
 
 export const Button =(props:buttonprops)=>{
-return <button onClick={props.OnClick}  className={`${variantstyles[props.variant]} ${sizestyles[props.size]} ${defaultstyles}`}>
+return <button onClick={props.OnClick}  className={ ` ${variantstyles[props.variant]} ${sizestyles[props.size]}
+ ${defaultstyles} ${props.fullwidth ? " w-full" : "" } ${props.loading ? "opacity-30" : "" }`} disabled={props.loading}  >
     {props.starticon ? <div className="pr-2 pt-1">{props.starticon}</div> : null} 
     {props.text} 
     {props.endicon ? <div className="pr-2 pt-1">{props.endicon} </div> : null}</button>
