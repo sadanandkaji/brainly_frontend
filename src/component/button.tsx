@@ -1,6 +1,6 @@
-import { ReactElement } from "react";
+// import { ReactElement } from "react";
 
-import { Iconprops,iconsizevariant } from "../icons";
+// import { Iconprops,iconsizevariant } from "../icons";
 
 type variants= "primary" | "secondary"
 export interface buttonprops{

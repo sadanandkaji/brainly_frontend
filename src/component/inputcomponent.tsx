@@ -1,8 +1,8 @@
 
 
-export function Inputcomponent({onchange,placeholder}: {onchange:()=>void;placeholder:string}){
+export function Inputcomponent({placeholder, reference}: {placeholder:string ;reference?:any}){
     return<div className="pt-1">
-        <input type="text" className=" bg-slate-300 px-8 py-2 border-2 border-slate-600 rounded-md " onChange={onchange} placeholder={placeholder}>
-        </input>
+        <input type="text" ref={reference} className=" bg-slate-300 px-8 py-2 border-2 border-slate-600 rounded-md " placeholder={placeholder}/>
+        
     </div>
 }
