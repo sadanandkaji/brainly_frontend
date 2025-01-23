@@ -3,12 +3,13 @@ import { Button } from "../component/button";
 import { Inputcomponent } from "../component/inputcomponent";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function Signin(){
     
     const usernameref=useRef<HTMLInputElement>()
     const passwordref=useRef<HTMLInputElement>()
+    const navigate=useNavigate()
 
 
     async function signin(){
@@ -22,6 +23,7 @@ export function Signin(){
     const jwt=response.data.token;
     localStorage.setItem("token",jwt);
     alert("signed in")
+    navigate("/dashboard")
     }
     return<div className=" h-screen w-screen flex  justify-center items-center  ">
         <div className="bg-gray-400 p-12 rounded-lg">
